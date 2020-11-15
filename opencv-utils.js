@@ -35,7 +35,7 @@ const opencvUtils = class {
 		script.setAttribute("async", "");
 		script.setAttribute("type", "text/javascript");
 		script.addEventListener("load", () => {
-			if (cv.getBuildInformation()) {
+			if (cv.getBuildInformation) {
 				// opencvの読み込みが完了している場合
 				console.log(cv.getBuildInformation());
 				onloadCallback();
