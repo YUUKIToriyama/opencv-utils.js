@@ -8,8 +8,8 @@ OpenCV.jsを使用する際、そのファイルの読み込みの順番やス�
 ## Usage
 ```javascript
 const utils = new opencvUtils();
-opencvUtils.loadOpenCV("https://docs.opencv.org/3.4.0/opencv.js", () => {
-	opencvUtils.executeScript("./process.js");
+utils.loadOpenCV("https://docs.opencv.org/3.4.0/opencv.js", () => {
+	utils.executeScript("./process.js");
 });
 ```
 
