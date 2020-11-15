@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>OpenCV.js sample</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript" src="./opencv-utils.js"></script>
+	<script type="text/javascript">
+		const opencv_utils = new opencvUtils();
+		opencv_utils.loadOpenCV("https://docs.opencv.org/3.4.0/opencv.js", () => {
+			opencv_utils.executeScript("./process.js");
+		});
+	</script>
+</html>
