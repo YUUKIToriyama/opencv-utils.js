@@ -51,7 +51,7 @@ const opencvUtils = class {
 			console.error("Failed to load " + OPENCV_URL);
 		});
 		script.src = OPENCV_URL;
-		let node = document.querySelector("body");
+		let node = document.querySelector("head");
 		node.appendChild(script);
 	}
 
