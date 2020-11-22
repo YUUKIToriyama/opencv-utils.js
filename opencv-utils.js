@@ -19,7 +19,6 @@
  *
  */
 
-
 const opencvUtils = class {
 	loadOpenCV(OPENCV_URL, onloadCallback) {
 		/*
@@ -55,9 +54,11 @@ const opencvUtils = class {
 		node.appendChild(script);
 	}
 
-	loadImage(url) {
+	loadImage(url, callback) {
 		/*
-		 * utils.loadImage(url);
+		 * utils.loadImage(url, (src) => {
+		 * 		cv.imshow("mycanvas", src);
+		 * });
 		 *
 		 * 引数によって指定された画像を読み込みimg要素を返す函数。
 		 */
@@ -65,7 +66,9 @@ const opencvUtils = class {
 		img.crossOrigin = "anonymous";
 		img.src = url;
 		img.onload = () => {
-			return img;
+			const src = cv.imread(img, cv.IMREAD_COLOR);
+			callback(src);
+			src.delete();
 		}
 	}
 
