@@ -99,3 +99,4 @@ const opencvUtils = class {
 		console.log("(C) Copyright 2020 YUUKIToriyama, All Rights Reserved.");
 	}
 }
+export default opencvUtils;
