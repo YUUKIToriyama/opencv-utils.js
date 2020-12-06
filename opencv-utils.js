@@ -31,7 +31,6 @@ const opencvUtils = class {
 		 *
 		 */
 		let script = document.createElement("script");
-		script.setAttribute("async", "");
 		script.setAttribute("type", "text/javascript");
 		script.addEventListener("load", () => {
 			if (cv.getBuildInformation) {
@@ -54,22 +53,15 @@ const opencvUtils = class {
 		node.appendChild(script);
 	}
 
-	loadImage(url, callback) {
+	static loadImage(dataURL) {
 		/*
-		 * utils.loadImage(url, (src) => {
-		 * 		cv.imshow("mycanvas", src);
-		 * });
+		 * utils.loadImage(dataURL);
 		 *
 		 * 引数によって指定された画像を読み込みimg要素を返す函数。
 		 */
 		let img = new Image();
-		img.crossOrigin = "anonymous";
-		img.src = url;
-		img.onload = () => {
-			const src = cv.imread(img, cv.IMREAD_COLOR);
-			callback(src);
-			src.delete();
-		}
+		img.src = dataURL;
+		return img;
 	}
 
 	executeScript(url) {
